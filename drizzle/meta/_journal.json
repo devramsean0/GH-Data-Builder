@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1738667139384,
+      "tag": "0000_nostalgic_maestro",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1738668994792,
+      "tag": "0001_wakeful_inertia",
+      "breakpoints": true
+    }
+  ]
+}
