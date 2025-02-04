@@ -18,13 +18,6 @@ export const usersTable = sqliteTable("users_table", {
     following_count: int().notNull(),
     github_created_at: text().notNull(),
     github_updated_at: text().notNull(),
-    total_private_repo_count: int().notNull(),
-    owned_private_repo_count: int().notNull(),
-    private_gist_count: int().notNull(),
-    disk_usage_count: int().notNull(),
-    collaborators_count: int().notNull(),
-    two_factor_enabled: int().notNull(),
-    plan: blob().notNull()
 });
 
 export const usersRelations = relations(usersTable, ({ many }) => ({

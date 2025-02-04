@@ -44,9 +44,23 @@ CREATE TABLE `repositories_table` (
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `repositories_table_github_id_unique` ON `repositories_table` (`github_id`);--> statement-breakpoint
-ALTER TABLE `users_table` ADD `plan` blob NOT NULL;--> statement-breakpoint
-ALTER TABLE `users_table` DROP COLUMN `title`;--> statement-breakpoint
-ALTER TABLE `users_table` DROP COLUMN `description`;--> statement-breakpoint
-ALTER TABLE `users_table` DROP COLUMN `plan_name`;--> statement-breakpoint
-ALTER TABLE `users_table` DROP COLUMN `plan_ldap_dn`;--> statement-breakpoint
-ALTER TABLE `users_table` DROP COLUMN `plan_business_plus`;
+CREATE TABLE `users_table` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`login` text NOT NULL,
+	`github_id` integer NOT NULL,
+	`gravatar` integer NOT NULL,
+	`site_admin` integer NOT NULL,
+	`name` text,
+	`company_name` text,
+	`location` text,
+	`hireable` integer,
+	`twitter_username` text,
+	`public_repo_count` integer NOT NULL,
+	`public_gist_count` integer NOT NULL,
+	`followers_count` integer NOT NULL,
+	`following_count` integer NOT NULL,
+	`github_created_at` text NOT NULL,
+	`github_updated_at` text NOT NULL
+);
+--> statement-breakpoint
+CREATE UNIQUE INDEX `users_table_github_id_unique` ON `users_table` (`github_id`);
