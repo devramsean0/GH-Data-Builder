@@ -40,7 +40,6 @@ for (let i = 0; i < 1; i++) {
     worker.addEventListener("message", async (event) => {
         if (event.data.type === "pong") {
             activeWorkers.push(event.data.id);
-            console.log(activeWorkers);
             Logger.info(`[Worker] [MAIN] [${event.data.id}] Received PONG`);
             worker_allocate_job();
         } else if (event.data.type === "new_job") {

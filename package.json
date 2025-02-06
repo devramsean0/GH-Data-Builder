@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@sapphire/fetch": "^3.0.5",
+    "better-sqlite3": "^11.8.1",
+    "colorette": "^2.0.20",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.39.1",
     "octokit": "^4.1.0"

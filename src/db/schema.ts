@@ -30,7 +30,6 @@ export const repositoriesTable = sqliteTable("repositories_table", {
     github_id: int().notNull().unique(),
     name: text().notNull(),
     full_name: text().notNull(),
-    private: int().notNull(),
     description: text(),
     fork: int().notNull(),
     homepage: text().notNull(),
@@ -48,8 +47,8 @@ export const repositoriesTable = sqliteTable("repositories_table", {
     has_pages: int().notNull(),
     has_downloads: int().notNull(),
     has_discussions: int().notNull(),
-    archived: text().notNull(),
-    disabled: text().notNull(),
+    archived: int().notNull(),
+    disabled: int().notNull(),
     visibility: text().notNull(),
     pushed_at: text(),
     github_created_at: text().notNull(),
@@ -73,6 +72,12 @@ export const repositoriesTable = sqliteTable("repositories_table", {
 export const repositoriesRelations = relations(repositoriesTable, ({ one }) => ({
     author: one(usersTable, {
         fields: [repositoriesTable.user_id],
-        references: [usersTable.id],
+        references: [usersTable.github_id],
     }),
 }));
+
+export const fetchesTable = sqliteTable("fetches_table", {
+    id: int().primaryKey({ autoIncrement: true }),
+    url: text().notNull(),
+    formattedParams: text().notNull(),
+})

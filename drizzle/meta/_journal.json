@@ -8,6 +8,13 @@
       "when": 1738682490297,
       "tag": "0000_demonic_maverick",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1738844950986,
+      "tag": "0001_thick_boomer",
+      "breakpoints": true
     }
   ]
 }
